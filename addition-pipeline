@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'NUM1', defaultValue: '0', description: 'First Number')
+        string(name: 'NUM2', defaultValue: '0', description: 'Second Number')
+    }
+
+    stages {
+        stage('Addition') {
+            steps {
+                script {
+                    // Convert parameters to integers
+                    int num1 = params.NUM1.toInteger()
+                    int num2 = params.NUM2.toInteger()
+
+                    // Add the numbers
+                    int sum = num1 + num2
+
+                    // Print the result
+                    echo "The sum of ${num1} and ${num2} is: ${sum}"
+                }
+            }
+        }
+    }
+}
+
