@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'NUM1', defaultValue: '10', description: 'First Number')
-        string(name: 'NUM2', defaultValue: '100', description: 'Second Number')
+        string(name: 'NUM1', defaultValue: '0', description: 'First Number')
+        string(name: 'NUM2', defaultValue: '0', description: 'Second Number')
     }
 
     stages {
